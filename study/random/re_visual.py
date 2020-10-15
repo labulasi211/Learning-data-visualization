@@ -12,6 +12,11 @@ while True:
     plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']
     fig, ax = plt.subplots()
     ax.scatter(rw.x_values, rw.y_values, s=1, c=range(rw.num_points), cmap=plt.cm.Blues, edgecolors='none')
+
+    # 突出起点和终点
+    ax.scatter(0, 0, s=20, c='green', edgecolors='none')
+    ax.scatter(rw.x_values[-1], rw.y_values[-1], c='red', edgecolors='none', s=20)
+
     ax.set_title("漫步散点题", fontsize=20)
     plt.show()
 

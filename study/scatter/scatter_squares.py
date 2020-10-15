@@ -19,5 +19,5 @@ ax.tick_params(axis='both', which='major', labelsize=10)
 # 设置每个坐标轴的取值范围
 ax.axis([0, 1100, 0, 1100000])
 
-file_name = '/images/squares_plot.png'
+file_name = 'squares_plot.png'
 plt.savefig(file_name, bbox_inches='tight')
