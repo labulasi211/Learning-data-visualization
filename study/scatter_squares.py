@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 
 plt.style.use('seaborn')
 x_values = list(range(1, 1001))
-squares = [x**2 for x in x_values]
+y_values = [x ** 2 for x in x_values]
 fig, ax = plt.subplots()
-ax.scatter(x_values, squares, s=1, c='red')
+ax.scatter(x_values, y_values, s=1, c=y_values, cmap=plt.cm.Blues)
 
 # 设置图表标题并给坐标轴加上标签
 plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']
@@ -19,4 +19,5 @@ ax.tick_params(axis='both', which='major', labelsize=10)
 # 设置每个坐标轴的取值范围
 ax.axis([0, 1100, 0, 1100000])
 
-plt.show()
+file_name ='F:\\Windows\\桌面\\大三上学期\\python\\项目\\Learning-data-visualization\\images\\squares_plot.png'
+plt.savefig(file_name, bbox_inches='tight')
