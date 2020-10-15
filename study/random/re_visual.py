@@ -11,7 +11,7 @@ while True:
     plt.style.use('classic')
     plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']
     fig, ax = plt.subplots()
-    ax.scatter(rw.x_values, rw.y_values, s=1, c=(0, 0.8, 0))
+    ax.scatter(rw.x_values, rw.y_values, s=1, c=range(rw.num_points), cmap=plt.cm.Blues, edgecolors='none')
     ax.set_title("漫步散点题", fontsize=20)
     plt.show()
 
