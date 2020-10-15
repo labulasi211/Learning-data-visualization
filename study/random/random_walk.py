@@ -19,15 +19,9 @@ class RandomWalk:
         while len(self.x_values) < self.num_points:
 
             # 决定前进方向以及以及沿这个方向前进额距离
-            x_direction = choice([-1, 1])
+            x_step = self._get_step()
 
-            x_distance = choice(range(1, 5))
-            x_step = x_distance * x_direction
-
-            y_direction = choice([-1, 1])
-
-            y_distance = choice(range(1, 5))
-            y_step = y_distance * y_direction
+            y_step = self._get_step()
 
             # 不应许原地踏步
             if y_step == 0 or x_step == 0:
@@ -39,3 +33,12 @@ class RandomWalk:
 
             self.x_values.append(x)
             self.y_values.append(y)
+
+    def _get_step(self):
+        """随机散步步数的模拟"""
+        direction = choice([1, -1])
+
+        distance = choice(range(0, 5))
+        step = distance * direction
+
+        return step
