@@ -1,8 +1,12 @@
-from plotly.graph_objs import Bar, Layout
-from plotly import offline
+import matplotlib
+import matplotlib.pyplot as plt
 
 
 from die import Die
+
+# 对pyplot进行一些设置
+plt.style.use('seaborn')
+plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']
 
 # 创建两个Die类
 die_1 = Die()
@@ -23,9 +27,11 @@ for value in range(2, max_result+1):
 # 对结果进行可视化
 x_value = list(range(2, max_result+1))
 y_value = frequencies
-data = [Bar(x=x_value, y=y_value)]
+fig, ax = plt.subplots(figsize=(10,6))
 
-x_axis_config = {'title': '结果', 'dtick': 1}
-y_axis_config = {'title': '结果的频率'}
-my_layout = Layout(title='同时投一个D6和一个D10 50000次的结果', xaxis=x_axis_config, yaxis=y_axis_config)
-offline.plot({'data': data, 'layout': my_layout}, filename='d6_d10.html')
+ax.bar(x_value, y_value)
+ax.set_xlabel('结果', fontsize=10)
+ax.set_ylabel('结果的频率', fontsize=10)
+ax.set_title('投一个D6和一个D10 50 000次的结果', fontsize=20)
+
+plt.show()
