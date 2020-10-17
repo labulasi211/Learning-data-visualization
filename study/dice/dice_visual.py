@@ -6,7 +6,7 @@ from die import Die
 
 # 创建两个Die类
 die_1 = Die()
-die_2 = Die()
+die_2 = Die(10)
 
 results = []
 for value in range(50_000):
@@ -27,5 +27,5 @@ data = [Bar(x=x_value, y=y_value)]
 
 x_axis_config = {'title': '结果', 'dtick': 1}
 y_axis_config = {'title': '结果的频率'}
-my_layout = Layout(title='投两个D6 50000次的结果', xaxis=x_axis_config, yaxis=y_axis_config)
-offline.plot({'data': data, 'layout': my_layout}, filename='d6.html')
+my_layout = Layout(title='同时投一个D6和一个D10 50000次的结果', xaxis=x_axis_config, yaxis=y_axis_config)
+offline.plot({'data': data, 'layout': my_layout}, filename='d6_d10.html')
