@@ -8,17 +8,11 @@ from die import Die
 die_1 = Die()
 die_2 = Die(10)
 
-results = []
-for value in range(50_000):
-    result = die_2.roll()+die_1.roll()
-    results.append(result)
+results = [die_2.roll() + die_1.roll() for value in range(50_000)]
 
 # 分析结果
 max_result = die_2.num_sides + die_1.num_sides
-frequencies = []
-for value in range(2, max_result+1):
-    frequency = results.count(value)
-    frequencies.append(frequency)
+frequencies = [results.count(value) for value in range(2, max_result+1)]
 
 # 对结果进行可视化
 x_value = list(range(2, max_result+1))
