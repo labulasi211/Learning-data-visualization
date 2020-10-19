@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import csv
 
 
-file_name = 'data/death_valley_2018_simple.csv'
+file_name = '../data/death_valley_2018_simple.csv'
 with open(file_name) as f:
     reader = csv.reader(f)
     header_row = next(reader)

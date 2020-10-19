@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 # 从文件中获取每日最高温度，日期，以及每日最低温度
-filename = 'data/sitka_weather_2018_simple.csv'
+filename = '../data/sitka_weather_2018_simple.csv'
 with open(filename) as f:
     reader = csv.reader(f)
     header_row = next(reader)
@@ -30,5 +30,6 @@ ax.set_xlabel('', fontsize=10)
 fig.autofmt_xdate()
 ax.set_ylabel('温度（F）', fontsize=10)
 ax.tick_params(axis='both', which='major', labelsize=10)
+
 
 plt.show()
